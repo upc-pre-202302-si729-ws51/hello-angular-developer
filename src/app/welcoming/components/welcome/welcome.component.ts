@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Developer} from "../../model/developer.entity";
 
 @Component({
   selector: 'app-welcome',
@@ -10,6 +11,7 @@ export class WelcomeComponent {
   @Input() lastName!: string;
 
   get fullName(): string {
-    return 'Unknown';
+    let developer = new Developer(this.firstName, this.lastName);
+    return developer.fullName == '' ? 'Unknown' : developer.fullName;
   }
 }
