@@ -9,4 +9,9 @@ export class AppComponent {
   title = 'Hello Angular Developer App';
   firstName: string = '';
   lastName: string = '';
+
+  onDeveloperRegistered(developer: {firstName: string; lastName: string}) {
+    this.firstName = developer.firstName;
+    this.lastName = developer.lastName;
+  }
 }
